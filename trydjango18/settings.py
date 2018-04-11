@@ -23,9 +23,17 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    #site after session
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'newsletter'
+    #3rd party apps
+    'crispy_forms',
+    'registration',
+    #my apps
+    'newsletter',
+
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -103,3 +111,21 @@ STATIC_ROOT =  os.path.join(os.path.dirname(BASE_DIR), "static_in_env","static_r
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT =os.path.join(os.path.dirname(BASE_DIR), "static_in_env","media_root")
+
+
+'''Crispy forms: framework'''
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+'''django-registration-redux'''
+ACCOUNT_ACTIVATION_DAYS=7
+REGISTRATION_AUTO_LOGIN= True
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+
+'''EMAIL settings'''
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'a.gabor.feher@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+
